@@ -18,7 +18,7 @@
   - **色彩體系**：深海藍（`#182B49`）、海洋藍（`#2980B9`）、古銅金（`#B8860B`）、炭灰內文（`#2C3E50`）。
   - **版面規範**：標準 A4、微軟正黑體、0.8 英吋優化邊距。
   - **內建組件**：影片元數據摘要表、章節起訖總表（雙色隔行交替）、分單元深度條列解析、重點任務 Callout 提示框。
-- 🤖 **AI Agent 友善**：提供標準 `SKILL.md` 規範與 JSON 資料結構 Schema，完美適配 Antigravity、Claude Code、OpenCode 等 AI Agent。
+- 🤖 **跨 Agent 一鍵安裝**：隨附 `AGENT_SETUP_影音大綱與專業Word排版_跨Agent全域安裝.md`，可一鍵無損安裝至 Claude Code、ChatGPT/Codex、Antigravity、OpenCode 全域環境。
 
 ---
 
@@ -26,17 +26,29 @@
 
 ```text
 video-outline-generator/
-├── SKILL.md                               # AI Agent 技能核心規範與標準作業流程
-├── README.md                              # 專案詳細說明與快速上手文件
-├── requirements.txt                       # Python 依賴清單
-├── .gitignore                             # Git 忽略設定
+├── SKILL.md                                           # AI Agent 技能核心規範與標準作業流程
+├── AGENT_SETUP_影音大綱與專業Word排版_跨Agent全域安裝.md   # 跨 Agent 一鍵全域安裝文件（可直接分享給任何人）
+├── README.md                                          # 專案詳細說明與快速上手文件
+├── requirements.txt                                   # Python 依賴清單
+├── LICENSE                                            # MIT 授權條款
+├── .gitignore                                         # Git 忽略設定
 ├── scripts/
-│   ├── extract_video_frames.py            # FFmpeg 高速影格抽取腳本
-│   └── generate_docx_outline.py           # 專業 Word (.docx) 生成引擎
+│   ├── extract_video_frames.py                        # FFmpeg 高速影格抽取腳本
+│   └── generate_docx_outline.py                       # 專業 Word (.docx) 生成引擎
 └── templates/
-    ├── outline_data_schema.json           # Word 生成器所使用的 JSON 資料結構範本
-    └── outline_template.md                # Markdown 格式大綱寫作模板
+    ├── outline_data_schema.json                       # Word 生成器所使用的 JSON 資料結構範本
+    └── outline_template.md                            # Markdown 格式大綱寫作模板
 ```
+
+---
+
+## 🎁 跨 Agent 一鍵全域安裝指南 (Cross-Agent Universal Setup)
+
+如果您想將此技能規則安裝到電腦上的所有 AI Agent（例如 Claude Code、ChatGPT/Codex、AntiGravity、OpenCode），只需將 [`AGENT_SETUP_影音大綱與專業Word排版_跨Agent全域安裝.md`](./AGENT_SETUP_影音大綱與專業Word排版_跨Agent全域安裝.md) 檔案交給您的 AI Agent，並說：
+
+> **「完整讀取這份文件，依照執行協定，把影音大綱與專業 Word 排版規則安裝到這台電腦所有已偵測到的 AI Agent 全域設定；保留原設定，完成後逐套驗證並回報。」**
+
+Agent 將自動完成安全備份、受控區塊合併與設定載入驗證！
 
 ---
 
@@ -114,16 +126,6 @@ python scripts/generate_docx_outline.py --input "outline_data.json" --output "�
 | **表格交替色** | `#F4F6F9` (淺灰藍) / `#FFFFFF` | 提升長表格易讀性 |
 | **高亮時間戳** | `#2980B9` (Ocean Blue), 粗體 | 關鍵起訖時間一目了然 |
 | **內文主體** | `#2C3E50` (Charcoal), 9.5pt, 1.15 倍行距 | 高對比、舒適長時間閱讀 |
-
----
-
-## 🤖 在 Antigravity / AI Agent 中使用此技能
-
-將本技能資料夾放入 Antigravity 技能目錄：
-- **全域技能目錄**：`C:\Users\<使用者名稱>\.gemini\config\skills\video-outline-generator`
-- **專案技能目錄**：`<專案根目錄>\.agent\skills\video-outline-generator`
-
-Agent 即可自動載入 `SKILL.md`，並遵循標準 SOP 執行長影片影格抽取、語音轉錄時間戳對齊與 Word 講義生成。
 
 ---
 
